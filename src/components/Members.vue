@@ -214,10 +214,10 @@ cursor: default!important;
 .members-cont:hover{background-color: #242439;
     cursor: pointer;}
 .member-statue{
-    width: 18px;height: 18px;background-color: #0b800b;
+    width: 18px;height: 18px;background-color: #2178f8;;
     position: absolute;top: 5px;right: 12px;border-radius: 100%;border: solid 2px white;
 }
-    .statue-busy{background-color: #c4c401
+    .statue-busy{background-color: #ff3030
     }
 
 label{
