@@ -63,8 +63,8 @@
     <h3><i @click="state= 'view'" class="btn btn-info fa fa-angle-left" style="margin-right:20px"></i> Add new member
         <span style="float:right" class="float-right"> 
             <div class="btn-group">
-                <button  @click="active = true" :class="active ? 'btn btn-sm btn-success text-light' : 'btn btn-sm btn-outline-success'" class="btn btn-sm btn-outline-success">Active</button>
-                <button @click="active = false" :class="!active ? 'btn btn-sm btn-danger text-light' : 'btn btn-sm btn-outline-danger'" class="btn btn-sm btn-outline-danger">Busy</button>
+                <button  @click="active = true" :class="active ? 'btn btn-sm text-light btn-statue-active' : 'btn btn-sm btn-statue-active-not'" class="btn btn-sm statue-btns">Active</button>
+                <button @click="active = false" :class="!active ? 'btn btn-sm text-light btn-statue-busy' : 'btn btn-sm text-light btn-statue-busy-not'" class="btn btn-sm statue-btns">Busy</button>
             </div>
     </span>
     </h3>
@@ -75,12 +75,12 @@
         <div class="">
             <label>Name :</label>
             <div class="input-group">
-                <input class="form-control"
+                <input class="form-control form-input-design"
                 v-model="name"
                  type="text" placeholder="Please enter name or nickname">
-                  <i v-if="nameWarning == true || nameWarning == false" class="fa fa-check-circle text-success" :class="nameWarning == true ? 'fa fa-times-circle text-danger' : 'fa fa-check-circle text-success' " style="font-size:16pt;padding : 10px"></i>
+
             </div>
-                <small  v-if="nameWarning == true " class="text-danger fa fa-info-circle"> Just alphabets !</small>
+                <small  v-if="nameWarning == true " class="fa fa-info-circle" style="color: #ff6b6b"> Just alphabets !</small>
             <hr class="mt-5 mb-2">
         </div>
         
@@ -99,23 +99,23 @@
             <div class="col-5">
         <label for="">Skills : </label>
     <div class="input-group">
-        <input type="text" class="form-control"><button class="btn btn-success fa fa-plus-hexagon">Add</button>
+        <input type="text" class="form-control"><button class="btn far fa-layer-plus" style="background-color:#3388a5;color: whitesmoke"></button>
     </div>
-    <div class="mt-3 container">
-        <span class="bg-secondary p-2 m-1" style="cursor:pointer;display:inline-block">Hello <i class="fa fa-trash text-danger"></i></span>
-        <span class="bg-secondary p-2 m-1" style="cursor:pointer;display:inline-block">Hello <i class="fa fa-trash text-danger"></i></span>
-        <span class="bg-secondary p-2 m-1" style="cursor:pointer;display:inline-block">Hello <i class="fa fa-trash text-danger"></i></span>
-        <span class="bg-secondary p-2 m-1" style="cursor:pointer;display:inline-block">Hello <i class="fa fa-trash text-danger"></i></span>
-        <span class="bg-secondary p-2 m-1" style="cursor:pointer;display:inline-block">And 5 more ... </span>
+    <div class="mt-3 container" style="padding: 0;">
+        <span class="p-2 m-1" style="cursor:pointer;display:inline-block;border:1px solid #c1c1c1;border-radius: 5px">Hello <i class="fa fa-trash" style="color:#ff5252;"></i></span>
+        <span class="p-2 m-1" style="cursor:pointer;display:inline-block;border:1px solid #c1c1c1;border-radius: 5px">Hello <i class="fa fa-trash" style="color:#ff5252;"></i></span>
+        <span class="p-2 m-1" style="cursor:pointer;display:inline-block;border:1px solid #c1c1c1;border-radius: 5px">Hello <i class="fa fa-trash" style="color:#ff5252;"></i></span>
+        <span class="p-2 m-1" style="cursor:pointer;display:inline-block;border:1px solid #c1c1c1;border-radius: 5px">Hello <i class="fa fa-trash" style="color:#ff5252;"></i></span>
+        <span class="p-2 m-1" style="cursor:pointer;display:inline-block;border:1px solid #c1c1c1;border-radius: 5px">And 5 more ... </span>
     </div>
     </div>
-            <div class="col-5"><label for="">Skills : </label>
+            <div class="col-5"><label for="">More Information : </label>
     <div class="input-group ">
-        <input type="text" class="form-control">
+        <textarea type="text" class="form-control"></textarea>
     </div></div>
 
 </div>
-<button class="btn btn-success btn-sm btn-block w-100" style="position:absolute;bottom:0" >Sumbit</button>
+<button class="btn btn-sm btn-block w-100 submit-btndes">Sumbit</button>
 </div>
 </div>
 </template>
@@ -185,7 +185,9 @@ cursor: default!important;
 }
 .members-cont{height: 200px;padding: 10px;transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;border-radius: 10px }
 .form-control:focus{
-    box-shadow :none
+    box-shadow :none;
+    background-color: transparent;
+    border-color: white;
 }
 
 .members-pic {
@@ -218,4 +220,25 @@ cursor: default!important;
     .statue-busy{background-color: #c4c401
     }
 
+label{
+    color: whitesmoke;
+}
+.form-control{
+    background-color: transparent;border: 1px solid #737496;font-size: 14px;color: whitesmoke!important;
+}
+
+.submit-btndes{
+    position:absolute;bottom:0;background-image: linear-gradient(120deg,#74c7c3,#5d2fdb);
+    border: none;color: white;height: 40px;transition: .3s;font-weight: bold
+}
+.submit-btndes:hover {transform: scale(1.01);color: white;
+}
+    textarea{resize: none;height: 100px;font-size: 12px;}
+    .btn-statue-active{color: #0c63e4;background-color: #2178f8;}
+    .btn-statue-active-not{color: white;border: solid 1px #737496;}
+    .btn-statue-busy{color: red;background-color: #ff3030
+    }
+    .btn-statue-busy-not{color: white;border: solid 1px #737496;}
+    .statue-btns:hover{color: white;}
+    .statue-btns:focus{outline: none;box-shadow: none}
 </style>

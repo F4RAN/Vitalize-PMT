@@ -2,7 +2,7 @@
     <div class="row">
       <div class="col-7">
 
-          <button v-if="!modal" class="button " style="background-color: #2d6072" @click="$refs.uploader.click();test();showSub = false"><strong>Upload Member Picture</strong></button>
+          <button v-if="!modal" class="button " style="background-image: linear-gradient(120deg,#74c7c3,#5d2fdb);text-align: center;" @click="$refs.uploader.click();test();showSub = false"><strong>Upload Avatar</strong></button>
       <input type="file" ref="uploader" @change="inputChange();" name="" id="" style="display:none">
       <!-- <div style="width:200px;position:absolute;right:0px;top:70px;" class="bg-dark">
         <button class="btn btn-light"></button>
@@ -59,7 +59,7 @@
             v-if="cropImg"
             :src="cropImg"
             alt="Cropped Image"
-            style="width:120px;height:120px"
+            style="width: 120px;height: 120px;"
           />
           <div v-else class="crop-placeholder" />
           <button class="btn btn-warning fa fa-sync" @click="modal=true"></button>
@@ -72,7 +72,7 @@
 <script>
 import 'cropperjs/dist/cropper.css';
 import VueCropper from 'vue-cropperjs'
-import image from '../assets/pic/avatar.jpeg'
+import image from '../assets/avatarpic/avaticon.png'
 // import axios from 'axios'
     export default {
         middleware : 'auths',
@@ -188,18 +188,19 @@ import image from '../assets/pic/avatar.jpeg'
 
 <style lang="scss" scoped>
 .box{
-  border:5px solid #666362;
-  -webkit-box-shadow: #FFF 0 -1px 4px, rgb(104, 94, 233) 0 -2px 10px, 0px 50px 21px 14px rgba(196, 196, 196, 0.18); 
-box-shadow: 0px 50px 21px 14px #e8e5ec1e;
+  border:2px solid #b4b4b4;
+
+box-shadow: 0px 0px 10px 0px #000000;
 background: #ECEFCF;
 }
 .preview-area {
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
     border-radius: 100%;
     overflow: hidden;
   
 }
+.preview-area img{width: 100%;height: 100%;}
 .preview-area p {
   font-size: 1.25rem;
   margin: 0;
@@ -237,7 +238,7 @@ background: #ECEFCF;
 
   color: #fff;
   border: 0 none;
-  border-radius: 15px;
+  border-radius:10px;
 
   font-size: 13px;
   font-weight: 500;

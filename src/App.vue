@@ -8,7 +8,7 @@
      <div style="z-index:999"> <i @click="quitApplication()" class="fa fa-times close-btn"></i></div>
   </div>
 
-   <div  class="bg-transparent" style="width:100%">
+   <div class="bg-transparent" style="width:100%">
    <div  style="width:100%;" class=" bg-transparent">
      <div style="height:100vh;display:inline-block" class="col-3 sidemenu">
        <div>
@@ -22,7 +22,7 @@
        </div>
      </div>
      <div style="height:100vh;float:right" class="col-9  main-content">
-       <app-members v-if="state == 'member' "></app-members>
+       <app-members v-if="state == 'member'"></app-members>
      </div>
    </div>
    </div>
